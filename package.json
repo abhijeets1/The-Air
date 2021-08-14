@@ -1,0 +1,22 @@
+{
+  "name": "site",
+  "version": "0.0.1",
+  "description": "Everyday leetcode and codechef challenges.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "site"
+  },
+  "author": "Abhijeet Shahakar",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "cron": "^1.8.2",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "puppeteer": "^2.1.1"
+  }
+}

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>THE AIR</title>
+	<link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
+	<style type="text/css">
+		body {
+			background-color: #041b2d;
+		}
+		.site-view {
+			display: flex;
+			flex-direction: column;
+		}
+		.navigation-bar {
+			background-color: #041b2d;
+			display: flex;
+			color: white;
+			font-family: 'Sen', sans-serif;
+			text-align: center;
+			font-size: 10px;
+			margin: 10px 0px 0px 20px;
+		}
+		.main-content {
+			display: flex;
+			flex-direction: column;
+			font-family: 'Sen', sans-serif;
+			align-items: center;
+		}
+		.website-name {
+			background-color: #041b2d;
+			text-align: center;
+			color: white;
+			font-size: 25px;
+			padding: 50px 100px 100px 100px;
+		}
+		.website-name h2 {
+			margin: 0px;
+			margin-bottom: 10px;
+			font-size: 70px;
+		}
+		.website-name h6 {
+			margin: 0px;
+			font-size: 30px;	
+		}
+		.questions-section {
+			background-color: white;
+			display: flex;
+			flex-direction: column;
+			color: #041b2d;	
+			font-size: 25px;
+			border-radius: 15px;
+			width: 90%;
+			box-shadow: 0px 0px 20px black;
+			padding-bottom: 20px;
+		}
+		.questions-section-head {
+			display: flex;
+			flex-flow: row;
+			margin-left: 40px;
+		}
+		.questions-section-head h4 {
+			margin-right: 20px;
+			margin-bottom: 10px;
+		}
+		.question {
+			border-radius: 15px;
+			padding: 0px 0px 0px 20px;
+			margin-left: 20px;
+			margin-right: 20px;
+			transition: 0.5s;
+		}
+		.question:hover {
+			transition: 0.5s;
+			box-shadow: 0px 0px 12px #041b2d;
+		}
+		
+		.selected {
+			color: #f9a602;
+			transform: scale(1.2);
+		}
+		.selection {
+			transition: 0.5s;
+		}
+		.selection:hover {
+			color: #f9a602;
+			transition: 0.5s;
+			cursor: pointer;
+		} 
+		.page-footer {
+			margin: 30px 0px 30px 0px;
+			bottom: 0%;
+			color: white;
+			font-size: 10px;
+			font-family: 'Sen', sans-serif;
+			text-align: center;
+		}
+		a {
+			color: white;
+			text-decoration: none;
+		}
+		a:hover {
+			color: #f9a602;
+			transition: 0.5s;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="site-view">
+		<div class="navigation-bar">
+			<h1> Other Topics : Coming Soon</h1>
+		</div>
+		<div class="main-content">
+			<div class="website-name">
+				<h2>THE AIR</h2>
+				<h6>EVERYDAY LEETCODE & CODECHEF CHALLENGES</h6>
+			</div>
+			<div class="questions-section">
+				<div class="questions-section-head">
+					<h4>LeetCode</h3>
+					<h4 id="eLC" class="selection selected" onclick="headClickedLeetCode(0)">Easy</h4>
+					<h4 id="mLC" class="selection" onclick="headClickedLeetCode(1)">Medium</h4>
+					<h4 id="hLC" class="selection" onclick="headClickedLeetCode(2)">Hard</h4>
+				</div>
+				<div class="question" onclick="openLink('<%= q0.l %>')">
+					<p>Title : <%= q0.t %></p>
+					<p>Index : <%= q0.i %> | Acceptance : <%= q0.a %> | Difficulty : <%= q0.d %></p>
+				</div>
+				<div class="question" onclick="openLink('<%= q1.l %>')">
+					<p>Title : <%= q1.t %></p>
+					<p>Index : <%= q1.i %> | Acceptance : <%= q1.a %> | Difficulty : <%= q1.d %></p>
+				</div>
+				<div class="question" onclick="openLink('<%= q2.l %>')">
+					<p>Title : <%= q2.t %></p>
+					<p>Index : <%= q2.i %> | Acceptance : <%= q2.a %> | Difficulty : <%= q2.d %></p>
+				</div>
+				<div class="question" onclick="openLink('<%= q3.l %>')">
+					<p>Title : <%= q3.t %></p>
+					<p>Index : <%= q3.i %> | Acceptance : <%= q3.a %> | Difficulty : <%= q3.d %></p>
+				</div>
+				<div class="questions-section-head">
+					<h4>CodeChef</h4>
+					<h4 id="sCC" class="selection selected" onclick="headClickedCodeChef(3)">School</h4>
+					<h4 id="eCC" class="selection" onclick="headClickedCodeChef(4)">Easy</h4>
+					<h4 id="mCC" class="selection" onclick="headClickedCodeChef(5)">Medium</h4>
+					<h4 id="hCC" class="selection" onclick="headClickedCodeChef(6)">Hard</h4>
+					<h4 id="cCC" class="selection" onclick="headClickedCodeChef(7)">Challenge</h4>
+				</div>
+
+				<div class="question" onclick="openLink('https://www.codechef.com/problems/' + '<%= q12.c %>')">
+					<p>Name : <%= q12.n %></p>
+					<p>Code : <%= q12.c %> | Submission : <%= q12.s %> | Accuracy : <%= q12.a %></p>
+				</div>
+
+				<div class="question" onclick="openLink('https://www.codechef.com/problems/' + '<%= q13.c %>')">
+					<p>Name : <%= q13.n %></p>
+					<p>Code : <%= q13.c %> | Submission : <%= q13.s %> | Accuracy : <%= q13.a %></p>
+				</div>
+
+				<div class="question" onclick="openLink('https://www.codechef.com/problems/' + '<%= q14.c %>')">
+					<p>Name : <%= q14.n %></p>
+					<p>Code : <%= q14.c %> | Submission : <%= q14.s %> | Accuracy : <%= q14.a %></p>
+				</div>
+
+				<div class="question" onclick="openLink('https://www.codechef.com/problems/' + '<%= q15.c %>')">
+					<p>Name : <%= q15.n %></p>
+					<p>Code : <%= q15.c %> | Submission : <%= q15.s %> | Accuracy : <%= q15.a %></p>
+				</div>
+			</div>
+		</div>
+	</div>
+		<footer class="page-footer">
+			<h1><a href="https://the-air.herokuapp.com/developer">About Developer...</a></h1>
+		</footer>
+</body>
+</html>
+
+<script type="text/javascript">
+	function openLink(link) {
+		window.open(link);
+	}
+	var headArray = ['eLC', 'mLC', 'hLC', 'sCC', 'eCC', 'mCC', 'hCC', 'cCC'];
+	function headClickedLeetCode(number) {
+		for(let i=0; i<3; i++) {
+			document.getElementById(headArray[i]).setAttribute('class', 'selection');
+		}
+		document.getElementById(headArray[number]).setAttribute('class', 'selection selected');
+		if(number === 0) {
+			let ques = document.getElementsByClassName('question');
+			ques[0].getElementsByTagName('p')[0].innerText = "Title : <%= q0.t %>";
+			ques[0].getElementsByTagName('p')[1].innerText = "Index : <%= q0.i %> | Acceptance : <%= q0.a %> | Difficulty : <%= q0.d %>";
+			ques[0].setAttribute("onclick", "openLink('<%= q0.l %>')");
+			ques[1].getElementsByTagName('p')[0].innerText = "Title : <%= q1.t %>";
+			ques[1].getElementsByTagName('p')[1].innerText = "Index : <%= q1.i %> | Acceptance : <%= q1.a %> | Difficulty : <%= q1.d %>";
+			ques[1].setAttribute("onclick", "openLink('<%= q1.l %>')");
+			ques[2].getElementsByTagName('p')[0].innerText = "Title : <%= q2.t %>";
+			ques[2].getElementsByTagName('p')[1].innerText = "Index : <%= q2.i %> | Acceptance : <%= q2.a %> | Difficulty : <%= q2.d %>";
+			ques[2].setAttribute("onclick", "openLink('<%= q2.l %>')");
+			ques[3].getElementsByTagName('p')[0].innerText = "Title : <%= q3.t %>";
+			ques[3].getElementsByTagName('p')[1].innerText = "Index : <%= q3.i %> | Acceptance : <%= q3.a %> | Difficulty : <%= q3.d %>";
+			ques[3].setAttribute("onclick", "openLink('<%= q3.l %>')");
+		}
+		if(number === 1) {
+			let ques = document.getElementsByClassName('question');
+			ques[0].getElementsByTagName('p')[0].innerText = "Title : <%= q4.t %>";
+			ques[0].getElementsByTagName('p')[1].innerText = "Index : <%= q4.i %> | Acceptance : <%= q4.a %> | Difficulty : <%= q4.d %>";
+			ques[0].setAttribute("onclick", "openLink('<%= q4.l %>')");
+			ques[1].getElementsByTagName('p')[0].innerText = "Title : <%= q5.t %>";
+			ques[1].getElementsByTagName('p')[1].innerText = "Index : <%= q5.i %> | Acceptance : <%= q5.a %> | Difficulty : <%= q5.d %>";
+			ques[1].setAttribute("onclick", "openLink('<%= q5.l %>')");
+			ques[2].getElementsByTagName('p')[0].innerText = "Title : <%= q6.t %>";
+			ques[2].getElementsByTagName('p')[1].innerText = "Index : <%= q6.i %> | Acceptance : <%= q6.a %> | Difficulty : <%= q6.d %>";
+			ques[2].setAttribute("onclick", "openLink('<%= q6.l %>')");
+			ques[3].getElementsByTagName('p')[0].innerText = "Title : <%= q7.t %>";
+			ques[3].getElementsByTagName('p')[1].innerText = "Index : <%= q7.i %> | Acceptance : <%= q7.a %> | Difficulty : <%= q7.d %>";
+			ques[3].setAttribute("onclick", "openLink('<%= q7.l %>')");
+		}
+
+		if(number === 2) {
+			let ques = document.getElementsByClassName('question');
+			ques[0].getElementsByTagName('p')[0].innerText = "Title : <%= q8.t %>";
+			ques[0].getElementsByTagName('p')[1].innerText = "Index : <%= q8.i %> | Acceptance : <%= q8.a %> | Difficulty : <%= q8.d %>";
+			ques[0].setAttribute("onclick", "openLink('<%= q8.l %>')");
+			ques[1].getElementsByTagName('p')[0].innerText = "Title : <%= q9.t %>";
+			ques[1].getElementsByTagName('p')[1].innerText = "Index : <%= q9.i %> | Acceptance : <%= q9.a %> | Difficulty : <%= q9.d %>";
+			ques[1].setAttribute("onclick", "openLink('<%= q9.l %>')");
+			ques[2].getElementsByTagName('p')[0].innerText = "Title : <%= q10.t %>";
+			ques[2].getElementsByTagName('p')[1].innerText = "Index : <%= q10.i %> | Acceptance : <%= q10.a %> | Difficulty : <%= q10.d %>";
+			ques[2].setAttribute("onclick", "openLink('<%= q10.l %>')");
+			ques[3].getElementsByTagName('p')[0].innerText = "Title : <%= q11.t %>";
+			ques[3].getElementsByTagName('p')[1].innerText = "Index : <%= q11.i %> | Acceptance : <%= q11.a %> | Difficulty : <%= q11.d %>";
+			ques[3].setAttribute("onclick", "openLink('<%= q11.l %>')");
+		}
+	}
+	function headClickedCodeChef(number) {
+		for(let i=3; i<headArray.length; i++) {
+			document.getElementById(headArray[i]).setAttribute('class', 'selection');
+		}
+		document.getElementById(headArray[number]).setAttribute('class', 'selection selected');	
+		// for school.
+		if(number === 3) {
+			let ques = document.getElementsByClassName('question');
+			ques[4].getElementsByTagName('p')[0].innerText = "Name : <%= q12.n %>";
+			ques[4].getElementsByTagName('p')[1].innerText = "Code : <%= q12.c %> | Submission : <%= q12.s %> | Accuracy : <%= q12.a %>";
+			ques[4].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q12.c %>')");
+			ques[5].getElementsByTagName('p')[0].innerText = "Name : <%= q13.n %>";
+			ques[5].getElementsByTagName('p')[1].innerText = "Code : <%= q13.c %> | Submission : <%= q13.s %> | Accuracy : <%= q13.a %>";
+			ques[5].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q13.c %>')");
+			ques[6].getElementsByTagName('p')[0].innerText = "Name : <%= q14.n %>";
+			ques[6].getElementsByTagName('p')[1].innerText = "Code : <%= q14.c %> | Submission : <%= q14.s %> | Accuracy : <%= q14.a %>";
+			ques[6].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q14.c %>')");
+			ques[7].getElementsByTagName('p')[0].innerText = "Name : <%= q15.n %>";
+			ques[7].getElementsByTagName('p')[1].innerText = "Code : <%= q15.c %> | Submission : <%= q15.s %> | Accuracy : <%= q15.a %>";
+			ques[7].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q15.c %>')");
+		}
+		// for easy.
+		if(number === 4) {
+			let ques = document.getElementsByClassName('question');
+			ques[4].getElementsByTagName('p')[0].innerText = "Name : <%= q16.n %>";
+			ques[4].getElementsByTagName('p')[1].innerText = "Code : <%= q16.c %> | Submission : <%= q16.s %> | Accuracy : <%= q16.a %>";
+			ques[4].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q16.c %>')");
+			ques[5].getElementsByTagName('p')[0].innerText = "Name : <%= q17.n %>";
+			ques[5].getElementsByTagName('p')[1].innerText = "Code : <%= q17.c %> | Submission : <%= q17.s %> | Accuracy : <%= q17.a %>";
+			ques[5].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q17.c %>')");
+			ques[6].getElementsByTagName('p')[0].innerText = "Name : <%= q18.n %>";
+			ques[6].getElementsByTagName('p')[1].innerText = "Code : <%= q18.c %> | Submission : <%= q18.s %> | Accuracy : <%= q18.a %>";
+			ques[6].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q18.c %>')");
+			ques[7].getElementsByTagName('p')[0].innerText = "Name : <%= q19.n %>";
+			ques[7].getElementsByTagName('p')[1].innerText = "Code : <%= q19.c %> | Submission : <%= q19.s %> | Accuracy : <%= q19.a %>";
+			ques[7].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q19.c %>')");
+		}	
+		// for medium.
+		if(number === 5) {
+			let ques = document.getElementsByClassName('question');
+			ques[4].getElementsByTagName('p')[0].innerText = "Name : <%= q20.n %>";
+			ques[4].getElementsByTagName('p')[1].innerText = "Code : <%= q20.c %> | Submission : <%= q20.s %> | Accuracy : <%= q20.a %>";
+			ques[4].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q20.c %>')");
+			ques[5].getElementsByTagName('p')[0].innerText = "Name : <%= q21.n %>";
+			ques[5].getElementsByTagName('p')[1].innerText = "Code : <%= q21.c %> | Submission : <%= q21.s %> | Accuracy : <%= q21.a %>";
+			ques[5].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q21.c %>')");
+			ques[6].getElementsByTagName('p')[0].innerText = "Name : <%= q22.n %>";
+			ques[6].getElementsByTagName('p')[1].innerText = "Code : <%= q22.c %> | Submission : <%= q22.s %> | Accuracy : <%= q22.a %>";
+			ques[6].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q22.c %>')");
+			ques[7].getElementsByTagName('p')[0].innerText = "Name : <%= q23.n %>";
+			ques[7].getElementsByTagName('p')[1].innerText = "Code : <%= q23.c %> | Submission : <%= q23.s %> | Accuracy : <%= q23.a %>";
+			ques[7].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q23.c %>')");
+		}
+		// for hard.
+		if(number === 6) {
+			let ques = document.getElementsByClassName('question');
+			ques[4].getElementsByTagName('p')[0].innerText = "Name : <%= q24.n %>";
+			ques[4].getElementsByTagName('p')[1].innerText = "Code : <%= q24.c %> | Submission : <%= q24.s %> | Accuracy : <%= q24.a %>";
+			ques[4].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q24.c %>')");
+			ques[5].getElementsByTagName('p')[0].innerText = "Name : <%= q25.n %>";
+			ques[5].getElementsByTagName('p')[1].innerText = "Code : <%= q25.c %> | Submission : <%= q25.s %> | Accuracy : <%= q25.a %>";
+			ques[5].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q25.c %>')");
+			ques[6].getElementsByTagName('p')[0].innerText = "Name : <%= q26.n %>";
+			ques[6].getElementsByTagName('p')[1].innerText = "Code : <%= q26.c %> | Submission : <%= q26.s %> | Accuracy : <%= q26.a %>";
+			ques[6].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q26.c %>')");
+			ques[7].getElementsByTagName('p')[0].innerText = "Name : <%= q27.n %>";
+			ques[7].getElementsByTagName('p')[1].innerText = "Code : <%= q27.c %> | Submission : <%= q27.s %> | Accuracy : <%= q27.a %>";
+			ques[7].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q27.c %>')");
+		}
+		// for Challenge.
+		if(number === 7) {
+			let ques = document.getElementsByClassName('question');
+			ques[4].getElementsByTagName('p')[0].innerText = "Name : <%= q28.n %>";
+			ques[4].getElementsByTagName('p')[1].innerText = "Code : <%= q28.c %> | Submission : <%= q28.s %> | Accuracy : <%= q28.a %>";
+			ques[4].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q28.c %>')");
+			ques[5].getElementsByTagName('p')[0].innerText = "Name : <%= q29.n %>";
+			ques[5].getElementsByTagName('p')[1].innerText = "Code : <%= q29.c %> | Submission : <%= q29.s %> | Accuracy : <%= q29.a %>";
+			ques[5].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q29.c %>')");
+			ques[6].getElementsByTagName('p')[0].innerText = "Name : <%= q30.n %>";
+			ques[6].getElementsByTagName('p')[1].innerText = "Code : <%= q30.c %> | Submission : <%= q30.s %> | Accuracy : <%= q30.a %>";
+			ques[6].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q30.c %>')");
+			ques[7].getElementsByTagName('p')[0].innerText = "Name : <%= q31.n %>";
+			ques[7].getElementsByTagName('p')[1].innerText = "Code : <%= q31.c %> | Submission : <%= q31.s %> | Accuracy : <%= q31.a %>";
+			ques[7].setAttribute("onclick", "openLink('https://www.codechef.com/problems/' + '<%= q31.c %>')");
+		}
+	}
+</script>
